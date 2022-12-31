@@ -1,13 +1,20 @@
 <?php
 
+use Faker\Factory;
+use Nettwerk\PhpFakerMusic\Classical;
+use Nettwerk\PhpFakerMusic\Dance;
+use Nettwerk\PhpFakerMusic\HipHop;
+use Nettwerk\PhpFakerMusic\Metal;
+use Nettwerk\PhpFakerMusic\Reggae;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$faker = \Faker\Factory::create();
-$faker->addProvider(new \RauweBieten\PhpFakerMusic\Classical($faker));
-$faker->addProvider(new \RauweBieten\PhpFakerMusic\Reggae($faker));
-$faker->addProvider(new \RauweBieten\PhpFakerMusic\HipHop($faker));
-$faker->addProvider(new \RauweBieten\PhpFakerMusic\Metal($faker));
-$faker->addProvider(new \RauweBieten\PhpFakerMusic\Dance($faker));
+$faker = Factory::create();
+$faker->addProvider(new Classical($faker));
+$faker->addProvider(new Reggae($faker));
+$faker->addProvider(new HipHop($faker));
+$faker->addProvider(new Metal($faker));
+$faker->addProvider(new Dance($faker));
 
 echo $faker->musicClassicalArtist() . ' - ' . $faker->musicClassicalAlbum() . PHP_EOL;
 echo $faker->musicReggaeArtist() . ' - ' . $faker->musicReggaeAlbum() . PHP_EOL;

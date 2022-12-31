@@ -1,6 +1,6 @@
 <?php
 
-namespace RauweBieten\PhpFakerMusic;
+namespace Nettwerk\PhpFakerMusic;
 
 use Faker\Provider\Base;
 
